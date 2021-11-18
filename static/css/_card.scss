@@ -1,0 +1,5 @@
+@each $color,$value in $colors{
+	.card.gradient.#{$color}{
+		--card-bg-color: linear-gradient(180deg, var(--color-#{$color}-light) 0%, var(--color-#{$color}-dark) 100%);
+	}
+}

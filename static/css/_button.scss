@@ -1,0 +1,51 @@
+@each $color,$value in $colors{
+	.btn.gradient-linear.#{$color}{
+		--btn-bg: linear-gradient(180deg, var(--color-#{$color}-light) 0%, var(--color-#{$color}) 100%);
+		--btn-bg-active: linear-gradient(180deg, var(--color-#{$color}) 0%, var(--color-#{$color}-dark) 100%);
+	}
+
+	.btn-outline.gradient-linear.#{$color}{
+		--btn-bg: linear-gradient(180deg, var(--bg-color) 0%, var(--color-#{$color}) 100%);
+		--btn-bg-active: linear-gradient(180deg, var(--color-#{$color}) 0%, var(--color-#{$color}-dark) 100%);
+		--btn-font-color: var(--font-color);
+	}
+
+	.btn.gradient-center.#{$color}{
+		--btn-bg: radial-gradient(circle, var(--bg-color) 0%, var(--color-#{$color}) 100%);
+		--btn-bg-active: radial-gradient(circle, var(--color-#{$color}-light) 0%, var(--color-#{$color}-dark) 100%);
+	}
+}
+
+.btn.rainbow{
+	--btn-bg: linear-gradient(90deg, #f00 0%, #ff0 20%, #0f0 40%, #0ff 60%, #00f 80%, #f0f 100%);
+	--btn-bg-active: linear-gradient(90deg, #f00 0%, #ff0 20%, #0f0 40%, #0ff 60%, #00f 80%, #f0f 100%);
+	--btn-font-color: #000;
+}
+
+.btn.rainbow.animated{
+	--btn-bg: linear-gradient(90deg, #f00 0%, #ff0 20%, #0f0 40%, #0ff 60%, #00f 80%, #f0f 100%);
+	--btn-bg-active: linear-gradient(90deg, #f00 0%, #ff0 20%, #0f0 40%, #0ff 60%, #00f 80%, #f0f 100%);
+	--btn-font-color: #000;
+	background-size: 600% 600%;
+
+	-webkit-animation: AnimationName 30s ease infinite;
+	-moz-animation: AnimationName 30s ease infinite;
+	animation: AnimationName 30s ease infinite;
+}
+
+
+@-webkit-keyframes AnimationName {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}

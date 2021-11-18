@@ -1,0 +1,101 @@
+$colors:(
+	primary: #124edd,
+	secondary: #797979,
+	info: #4daeae,
+	success: #2fb52f,
+	warning: #b3b025,
+	danger: #f00a0a
+);
+
+html{
+	height: 100%;
+}
+
+:root{
+	--color-nav: rgb(255,255,255);
+	--color-nav-active: rgb(128, 128, 128);
+	--font-color-nav: rgb(0,0,0);
+	--font-color-nav-active: rgb(48, 13, 88);
+}
+
+body{
+	grid-template-areas: 'header header' 'nav main';
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 200px 1fr;
+	height: inherit;
+}
+
+header{
+	border-bottom: solid 1px var(--bg-color-active);
+}
+
+main{
+	overflow-y: scroll;
+	padding: .5rem;
+}
+
+nav{
+	background-color: var(--color-nav);
+	color: var(--font-color-nav);
+	padding: .25rem;
+}
+
+nav > .menu{
+	flex-direction: column;
+}
+
+nav .dropdown > .menu{
+	position: relative;
+	background-color: var(--color-nav);
+}
+
+nav .menu-item{
+	display: block;
+	padding: .5rem;
+	color: var(--font-color-nav);
+	transition: all var(--transition-speed);
+}
+
+nav .menu-item.active,
+nav .menu-item:hover{
+	background-color: var(--color-nav-active);
+	color: var(--font-color-nav-active);
+}
+
+a{
+	text-decoration: none;
+}
+
+.accordion > .body{
+	display: flex;
+	gap: .5rem;
+	flex-wrap: wrap;
+	padding: .5rem;
+}
+
+.accordion > .header{
+	padding: .5rem;
+}
+
+.d-none{
+	display: none !important;
+}
+
+.editColor{
+	display: flex;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@import "./button";
+@import "./card";
